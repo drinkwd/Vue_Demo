@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/vue.js"></script>
+	<script>
+	window.onload=function(){
+		var c=new Vue({
+			el:'#box',//选择器
+			data:{
+				msg:'1',
+				b:1
+			}
+		});
+		c.$watch('msg',function () {
+			alert("发生变化了");
+		})
+		document.onclick=function () {
+			c.msg=10;
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="box">
+		{{msg}}
+		{{b}}
+	</div>
+</body>
+</html>

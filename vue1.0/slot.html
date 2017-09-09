@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:"#box",
+                components:{
+                    "aaa":{
+                        template:"#aaa"
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <aaa>
+        <ul>
+            <li>111</li>
+            <li>111</li>
+            <li>111</li>
+            <li>111</li>
+        </ul>
+    </aaa>
+</div>
+<template id="aaa">
+    <h1>hello world</h1>
+    <slot> 这是默认的情况</slot>
+</template>
+</body>
+</html>

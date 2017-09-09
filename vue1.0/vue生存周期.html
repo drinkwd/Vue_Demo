@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>[v-cloak]{display: none;}</style>
+	<script src="js/vue.js"></script>
+	<script>
+	window.onload=function(){
+		var c=new Vue({
+			el:'#box',//选择器
+			data:{
+				msg:'welcome Vue'
+			},
+			created:function () {
+				alert("实力已经执行")
+			}
+		});
+	}
+	</script>
+</head>
+<body>
+	<div id="box" v-cloak>
+		{{msg}}
+	</div>
+</body>
+</html>

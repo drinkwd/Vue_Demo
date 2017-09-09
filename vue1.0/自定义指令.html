@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+<body>
+<div id="box">
+    <p v-demo>红色文字</p>
+</div>
+<script type="text/javascript">
+    window.onload = function() {
+        // 全局指令
+        Vue.directive('demo',
+            function(el,val){
+                this.el.style.color ='red'
+            }
+        );
+        var app = new Vue({
+            el: '#box'
+        });
+    }
+</script>
+</body>
+</html>

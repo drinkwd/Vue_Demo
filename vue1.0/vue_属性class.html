@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color:#ff0000;
+        }
+        .border{
+            border: 1px solid black;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:"#box",
+                data:{
+                    red:'red',
+                    b:'border'
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <!--原声的肯定好使但是我们用了vue就用vue提供的语法-->
+    <!--下面的red是数据里面的red,b同理  要是只有一个class的话里面的数据也得是数组-->
+    <strong :class="[red,b]">文字、、、</strong>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <script>
+        window.onload=function () {
+            var Event=new Vue();
+            var a={
+                template:`
+                <div>
+                    <span>我是A组件</span>---->{{a}}
+                    <input type="button"value="把A数据给C" @click="send()">
+                </div>
+                `,
+                data(){
+                    return {a:"我是a数据"}
+                },
+                methods:{
+                    send(){
+                        Event.$emit('a-msg',this.a)
+                    }
+                }
+            } ;
+            var b={
+                template:`
+                <div>
+                    <span>我是B组件</span>---->{{a}}
+                    <input type="button"value="把B数据给C">
+                </div>
+                `,
+                data(){
+                    return {a:"我是b数据"}
+                }
+            };
+            var c={
+                template:"<h3>{{a}}</h3>"
+                ,
+                data(){
+                    return {a:'c组件'}
+                },
+                mounted(){
+                    Event.$on('a-msg',function (a) {
+                        alert(this);
+                        this.a=a;
+                })
+                }
+            };
+            new Vue({
+                el:'#box',
+                components:{
+                    'com-a':a,
+                    'com-b':b,
+                    'com-c':c
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <com-a></com-a>
+        <com-b></com-b>
+        <com-c></com-c>
+    </div>
+</body>
+</html>

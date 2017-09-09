@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    window.onload = function () {
+        new Vue({
+            el: '#box',
+            data: {
+                msg: "我是数据"
+            },
+            components:{
+                'app':{
+                    //不支持片段代码的写法 也不支持<template>
+                    // <h1>我是组件代码的内容</h1><strong>我是加粗</strong>
+                    // </template>必须有一个根元素
+                    template:"#aaa"
+                }
+            }
+        })
+    }
+</script>
+<body>
+<div id="box">
+    <app></app>
+</div>
+<template id="aaa">
+    <div>
+        <h1>我是组件代码的内容</h1><strong>我是加粗</strong>
+    </div>
+</template>
+</body>
+</html>

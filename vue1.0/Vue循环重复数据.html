@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload=function () {
+            var vm=new Vue({
+                el:"#box",
+                data:{
+                    arr:['1','2','3']
+                },
+                methods:{
+                    show:function () {
+                        this.arr.push(3);
+                    }
+                }
+
+            })
+        }
+    </script>
+</head>
+<body>
+
+<div id="box" >
+    <input type="button"  value="按钮" v-on:click="show()">
+    <ul>
+        <li v-for="(value,index) in arr">
+            {{value}}
+        </li>
+    </ul>
+</div>
+</body>
+</html>

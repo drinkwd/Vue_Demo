@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color:#ff0000;
+        }
+        .border{
+            border: 1px solid black;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:"#box",
+                data:{
+                    msg:"welcome"
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="msg">
+    <br/>
+    {{msg}}
+    <br/>
+    <!--单次绑定-->
+    <p v-once>{{msg}}</p>
+    <!--html转译-->
+    <p v-html="msg"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <aaa>
+    </aaa>
+</div>
+<template id="aaa">
+    <h1>我是父组件--->{{msg2}}</h1>
+    <bbb @child-msg="get"></bbb>
+</template>
+<template id="bbb">
+    <h3>我子组件</h3>
+    <input type="button" value="send" @click="send()">
+</template>
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data: {
+            a: 'aaa'
+        },
+        components: {
+            'aaa': {
+                data(){
+                    return {
+                        msg2: '我是父组件的数据'
+                    }
+                },
+                template: '#aaa',
+                methods:{
+                  get(msg){
+                     this.msg2=msg;
+                  }
+                },
+                components: {
+                    'bbb': {
+                        data(){
+                            return {a:'我是子组件的数据'}
+                        },
+                        template: '#bbb',
+                        methods:{
+                            send(){
+                                this.$emit('child-msg',this.a);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+</script>
+</body>
+
+</html>

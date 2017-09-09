@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var c = new Vue({
+                el: '#box',//选择器
+                data: {
+                    json: [{a: "appel", b: "orange", c: "pear"}]
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li v-for="(k,v) in json">
+             {{k}} {{v}}
+        </li>
+    </ul>
+    <hr/>
+    <ul>
+        <li v-for="value in json">
+            {{value}}
+        </li>
+    </ul>
+</div>
+</body>
+</html>

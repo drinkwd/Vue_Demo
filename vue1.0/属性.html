@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:"#box",
+                data:{
+                    url:"https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <img v-bind:src="url" alt="">
+</div>
+</body>
+</html>

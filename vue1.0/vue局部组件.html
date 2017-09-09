@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <aaa></aaa>
+</div>
+<script>
+    var Aaa=Vue.extend({
+        data(){
+            return {msg:"Hello"}
+        },
+        template:'<h3>{{msg}}</h3>'
+    });
+    new Vue({//局部组件
+        el:'#box',
+        data:{},
+        components:{
+            'aaa':Aaa
+        }
+    })
+</script>
+</body>
+</html>

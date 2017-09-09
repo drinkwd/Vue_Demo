@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color:#ff0000;
+        }
+        .border{
+            border: 1px solid black;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:"#box",
+                data:{
+                    json:{
+                        red:true,
+                        border:true
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <strong :class="json">文字、、、</strong>
+</div>
+</body>
+</html>

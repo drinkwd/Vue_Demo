@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            width:100px;
+            height:100px;
+            background: red;
+            margin: 20px auto;
+        }
+    </style>
+    <link rel="stylesheet" href="animate.css">
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:'#box',
+                data:{
+                    show:'',
+                    arr:['apple','pear','orange']
+                },
+                computed:{
+                    lists:function(){
+                        var arr1=[];
+                        this.arr.forEach(function (val) {
+                            if(val.startsWith(this.show)){
+                                arr1.push(val)
+                            }
+                        }.bind(this))
+                        return arr1;
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type='text' v-model="show">
+    <transition-group enter-active-class="rollIn" leave-active-class="rollOut">
+        <p v-show="show" class="animated" v-for="(value,index) in lists" :key="index">
+        {{value}}
+    </p>
+    </transition-group>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script>
+        Vue.directive('red', {
+            // 当绑定元素插入到 DOM 中。
+            bind: function () {
+                // 聚焦元素
+                el
+            }
+        })
+        window.onload=function () {
+            new Vue({
+                el:"#box",
+                data:{
+                    a:9
+                },
+                methods:{
+                    show:function () {
+                        alert(1);
+                    }
+                }
+            })
+        }
+
+    </script>
+</head>
+<body>
+<div id="box">
+    <span v-red="a">123</span>
+</div>
+</body>
+
+</html>

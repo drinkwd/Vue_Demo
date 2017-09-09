@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload=function () {
+
+            Vue.filter('uppercase',function (input,a,b) {
+                console.log(a);
+                alert(a+','+b);
+                return input<10? '0'+input:input;
+            })
+            new Vue({
+                el:"#box",
+                data:{
+                    a:9
+                }
+            })
+        }
+
+    </script>
+</head>
+<body>
+<div id="box">
+{{a|uppercase(1,2)}}
+</div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/vue.js"></script>
+	<script>
+	window.onload=function(){
+		var c=new Vue({
+			el:'#box',//选择器
+			data:{
+				msg:{name:"string",age:16}
+
+			}
+		});
+		c.$watch('msg',function () {
+			alert("发生变化了");
+		},{deep:true})
+		document.onclick=function () {
+			c.msg.name='haha';
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="box">
+		{{msg}}
+	</div>
+</body>
+</html>

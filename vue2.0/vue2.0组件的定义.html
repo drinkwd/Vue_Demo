@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="bower_components/vue/dist/vue.js"></script>
+<!--<script src="vue1.0/vue.js"></script>-->
+<script>
+    var Home={
+        template:'#aaa'
+    };
+    Vue.component('app',Home);
+    window.onload = function () {
+        new Vue({
+            el: '#box',
+            data: {
+                msg: "我是数据"
+            }
+        })
+    }
+</script>
+<body>
+<div id="box">
+    <app></app>
+</div>
+<template id="aaa">
+    <div>
+        <h1>我是组件代码的内容</h1><strong>我是加粗</strong>
+    </div>
+</template>
+</body>
+</html>

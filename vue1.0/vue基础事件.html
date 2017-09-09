@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var c = new Vue({
+                el: '#box',//选择器
+                data: {
+                    json: {a: "appel", b: "orange", c: "pear"}
+                },
+                methods:{
+                    show:function () {
+                        alert(1);
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="弹出" v-on:click="show()">
+</div>
+</body>
+</html>
